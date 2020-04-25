@@ -135,7 +135,7 @@ function initializeDrag(disk, e) {
     return;
   }
   indexFr = indexTo;
-  if (disk.id != disksOnTowers[indexFr - 1][0].id || gameOver || demo) return;
+  if (gameOver || demo || disk.id != disksOnTowers[indexFr - 1][0].id) return;
   objDisk = disk;
   x = e.clientX;
   y = e.clientY;
