@@ -45,6 +45,7 @@ function submitTest() {
       tag = false;
       x = e.pageX - parseInt(handler.css('left'), 10);
       y = e.pageY;
+      maxWidth = drag.width() - handler.width();
     });
 
     // 鼠标指针在上下文移动时，移动距离大于0小于最大间距，滑块x轴位置等于鼠标移动距离
