@@ -2,232 +2,235 @@
 <html lang="zh-cn">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/jquery.dad.min.css">
-  <link rel="stylesheet" href="css/main.min.css">
-  <title>元素模拟</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.dad.min.css">
+    <link rel="stylesheet" href="css/main.min.css">
+    <title>元素模拟</title>
 </head>
 
 <body>
-  <!-- 菜单 -->
-  <ul class="nav nav-tabs nav-fill">
-    <li class="nav-item"><a class="nav-link" href="..">返回主页</a></li>
-    <li class="nav-item"><a class="nav-link active" href="#">基础演示页面</a></li>
-    <li class="nav-item"><a class="nav-link" href="index1.html">高阶演示页面</a></li>
-  </ul>
+    <!-- 菜单 -->
+    <ul class="nav nav-tabs nav-fill">
+        <li class="nav-item"><a class="nav-link" href="..">返回主页</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">基础演示页面</a></li>
+        <li class="nav-item"><a class="nav-link" href="index1.html">高阶演示页面</a></li>
+    </ul>
 
-  <!-- 延迟显示 -->
-  <div class="card">
-    <div class="card-body">
-      <div class="progress">
-        <div id="prog" class="progress-bar progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-          aria-valuemax="100" style="width: 0%"></div>
-      </div>
-      <div id="D1"></div>
-    </div>
-  </div>
+    <div id="broswerA"></div>
 
-  <!-- 模拟登录 -->
-  <div class="card">
-    <h5 class="card-header">模拟登录（admin 123456）</h5>
-    <div class="card-body">
-      <form method="get" action="" onsubmit="return submitTest()">
-        <div class="form-group row" id="change_margin_1">
-          <label for="uid" class="col-sm-2 col-form-label">用户名：</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" name="user" id="uid" placeholder="请输入用户名" value="admin">
-          </div>
-        </div>
-        <!-- input的value为空时弹出提醒 -->
-        <p id="message_1"></p>
-        <div class="form-group row" id="change_margin_2">
-          <label for="pwd" class="col-sm-2 col-form-label">密&nbsp&nbsp&nbsp&nbsp码：</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="pwd" name="password" placeholder="请输入密码">
-          </div>
-        </div>
-        <!-- input的value为空时弹出提醒 -->
-        <p id="message_2"></p>
-        <input class="btn btn-outline-secondary" type="submit" value="登录">
-        <input class="btn btn-outline-secondary" type="reset" value="重置">
-        <div id="s"></div>
-      </form>
-    </div>
-  </div>
-
-
-  <!-- 下拉列表 -->
-  <div class="card">
-    <h5 class="card-header">下拉列表</h5>
-    <div class="card-body">
-      <p>
-        <p id="s2Id"></p>
-        <select name="s1" id="s1Id" title="下拉列表">
-          <option value="bj">北京</option>
-          <option value="sz">深圳</option>
-          <option value="sh">上海</option>
-        </select>
-      </p>
-      <select id="s3Id" multiple="multiple" size="7" title="下拉列表多选">
-        <option value="1">01</option>
-        <option value="2">02</option>
-        <option value="3">03</option>
-        <option value="4">04</option>
-        <option value="5">05</option>
-        <option value="6">06</option>
-        <option value="7">07</option>
-        <option value="8">08</option>
-        <option value="9">09</option>
-      </select>
-    </div>
-  </div>
-
-  <!--警告框-->
-  <div class="card">
-    <h5 class="card-header">警告框</h5>
-    <div class="card-body">
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary" type="button" id="b1">点击弹出警告框</button>
-        </div>
-        <input type="text" class="form-control" id="t1">
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary" type="button" id="b2">点击弹出提问框</button>
-        </div>
-        <input type="text" class="form-control" id="t2">
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary" type="button" id="b3" data-target="#exampleModal"
-            data-toggle="modal" data-backdrop="static">点击弹出模态框</button>
-        </div>
-        <input type="text" class="form-control" id="t3">
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">模态框</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">姓名：</span>
-                  </div>
-                  <input type="text" class="form-control" id="basic-addon1">
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="b4">关闭</button>
-                <button type="button" class="btn btn-primary" id="b5">保存修改</button>
-              </div>
+    <!-- 延迟显示 -->
+    <div class="card">
+        <div class="card-body">
+            <div class="progress">
+                <div id="prog" class="progress-bar progress-bar-animated" role="progressbar" aria-valuenow="0"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
             </div>
-          </div>
+            <div id="D1"></div>
         </div>
-      </div>
-
     </div>
-  </div>
 
-  <!--双击-->
-  <div class="card">
-    <h5 class="card-header">双击</h5>
-    <div class="card-body">
-      <div id="dblclick" style="background-color:green;color:#ffffff;padding:40px;">
-        请双击这里
-      </div>
+    <!-- 模拟登录 -->
+    <div class="card">
+        <h5 class="card-header">模拟登录（admin 123456）</h5>
+        <div class="card-body">
+            <form method="get" action="" onsubmit="return submitTest()">
+                <div class="form-group row" id="change_margin_1">
+                    <label for="uid" class="col-sm-2 col-form-label">用户名：</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="user" id="uid" placeholder="请输入用户名" value="admin">
+                    </div>
+                </div>
+                <!-- input的value为空时弹出提醒 -->
+                <p id="message_1"></p>
+                <div class="form-group row" id="change_margin_2">
+                    <label for="pwd" class="col-sm-2 col-form-label">密&nbsp&nbsp&nbsp&nbsp码：</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="pwd" name="password" placeholder="请输入密码">
+                    </div>
+                </div>
+                <!-- input的value为空时弹出提醒 -->
+                <p id="message_2"></p>
+                <input class="btn btn-outline-secondary" type="submit" value="登录">
+                <input class="btn btn-outline-secondary" type="reset" value="重置">
+                <div id="s"></div>
+            </form>
+        </div>
     </div>
-  </div>
 
-  <!--悬浮-->
-  <div class="card">
-    <h5 class="card-header">悬浮 - 多级下拉菜单</h5>
-    <div class="card-body">
-      <ul id="menu">
-        <li>
-          <a href="">分 类</a>
-          <ul>
-            <li>
-              <a href="">页面重构</a>
-              <ul>
-                <li> <a href="">HTML</a> </li>
-                <li> <a href="">CSS</a> </li>
-                <li> <a href="">Photoshop</a> </li>
-              </ul>
-            </li>
-            <li>
-              <a href="">编程语言</a>
-              <ul>
-                <li> <a href="">JavaScript</a> </li>
-                <li> <a href="">PHP</a> </li>
-                <li> <a href="">Java</a> </li>
-                <li> <a href="">Python</a> </li>
-                <li> <a href="">NodeJS</a> </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
 
-  <!--拖拽-->
-  <div class="card">
-    <h5 class="card-header">拖动滑块</h5>
-    <div class="card-body" onselectstart="return false;" unselectable="on" style="-moz-user-select:none;">
-      <p id="drag"></p>
-      <button class="btn btn-primary" id="re_drag">重置</button>
+    <!-- 下拉列表 -->
+    <div class="card">
+        <h5 class="card-header">下拉列表</h5>
+        <div class="card-body">
+            <p>
+            <p id="s2Id"></p>
+            <select name="s1" id="s1Id" title="下拉列表">
+                <option value="bj">北京</option>
+                <option value="sz">深圳</option>
+                <option value="sh">上海</option>
+            </select>
+            </p>
+            <select id="s3Id" multiple="multiple" size="7" title="下拉列表多选">
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+            </select>
+        </div>
     </div>
-  </div>
-  <div class="card">
-    <h5 class="card-header">拖拽方块</h5>
-    <div class="card-body">
-      <div class="dowebok dad-active dad-container">
-        <div class="item item1 dads-children dad-draggable-area" data-dad-id="1" data-dad-position="6"
-          style="visibility: visible;"> 1 </div>
-        <div class="item item2 dads-children dad-draggable-area" data-dad-id="2" data-dad-position="1"> 2 </div>
-        <div class="item item3 dads-children dad-draggable-area" data-dad-id="3" data-dad-position="3"> 3 </div>
-        <div class="item item4 dads-children dad-draggable-area" data-dad-id="4" data-dad-position="4"> 4 </div>
-        <div class="item item5 dads-children dad-draggable-area" data-dad-id="5" data-dad-position="5"> 5 </div>
-        <div class="item item6 dads-children dad-draggable-area" data-dad-id="6" data-dad-position="2"
-          style="visibility: visible;"> 6 </div>
-      </div>
-    </div>
-  </div>
 
-  <hr />
+    <!--警告框-->
+    <div class="card">
+        <h5 class="card-header">警告框</h5>
+        <div class="card-body">
 
-  <!--frame-->
-  <div class="card">
-    <h5 class="card-header">frame1</h5>
-    <div class="card-body">
-      <iframe src="./frame.html" name="frame1" height="450px" width="100%"></iframe>
-    </div>
-  </div>
-  <div class="card">
-    <h5 class="card-header">frame2</h5>
-    <div class="card-body">
-      <iframe src="./frame_1.html" name="frame2" height="450px" width="100%"></iframe>
-    </div>
-  </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button" id="b1">点击弹出警告框</button>
+                </div>
+                <input type="text" class="form-control" id="t1">
+            </div>
 
-  <!-- Optional JavaScript -->
-  <script src="js/jquery.min.js"> </script>
-  <script src="js/jquery.dad.min.js"> </script>
-  <script src="js/bootstrap.bundle.min.js"> </script>
-  <script src="js/main.min.js"></script>
-  <script src="js/date.min.js"></script>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button" id="b2">点击弹出提问框</button>
+                </div>
+                <input type="text" class="form-control" id="t2">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" type="button" id="b3" data-target="#exampleModal"
+                        data-toggle="modal" data-backdrop="static">点击弹出模态框</button>
+                </div>
+                <input type="text" class="form-control" id="t3">
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">模态框</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">姓名：</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="basic-addon1">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="b4">关闭</button>
+                                <button type="button" class="btn btn-primary" id="b5">保存修改</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--双击-->
+    <div class="card">
+        <h5 class="card-header">双击</h5>
+        <div class="card-body">
+            <div id="dblclick" style="background-color:green;color:#ffffff;padding:40px;">
+                请双击这里
+            </div>
+        </div>
+    </div>
+
+    <!--悬浮-->
+    <div class="card">
+        <h5 class="card-header">悬浮 - 多级下拉菜单</h5>
+        <div class="card-body">
+            <ul id="menu">
+                <li>
+                    <a href="">分 类</a>
+                    <ul>
+                        <li>
+                            <a href="">页面重构</a>
+                            <ul>
+                                <li> <a href="">HTML</a> </li>
+                                <li> <a href="">CSS</a> </li>
+                                <li> <a href="">Photoshop</a> </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">编程语言</a>
+                            <ul>
+                                <li> <a href="">JavaScript</a> </li>
+                                <li> <a href="">PHP</a> </li>
+                                <li> <a href="">Java</a> </li>
+                                <li> <a href="">Python</a> </li>
+                                <li> <a href="">NodeJS</a> </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--拖拽-->
+    <div class="card">
+        <h5 class="card-header">拖动滑块</h5>
+        <div class="card-body" onselectstart="return false;" unselectable="on" style="-moz-user-select:none;">
+            <p id="drag"></p>
+            <button class="btn btn-primary" id="re_drag">重置</button>
+        </div>
+    </div>
+    <div class="card">
+        <h5 class="card-header">拖拽方块</h5>
+        <div class="card-body">
+            <div class="dowebok dad-active dad-container">
+                <div class="item item1 dads-children dad-draggable-area" data-dad-id="1" data-dad-position="6"
+                    style="visibility: visible;"> 1 </div>
+                <div class="item item2 dads-children dad-draggable-area" data-dad-id="2" data-dad-position="1"> 2 </div>
+                <div class="item item3 dads-children dad-draggable-area" data-dad-id="3" data-dad-position="3"> 3 </div>
+                <div class="item item4 dads-children dad-draggable-area" data-dad-id="4" data-dad-position="4"> 4 </div>
+                <div class="item item5 dads-children dad-draggable-area" data-dad-id="5" data-dad-position="5"> 5 </div>
+                <div class="item item6 dads-children dad-draggable-area" data-dad-id="6" data-dad-position="2"
+                    style="visibility: visible;"> 6 </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <!--frame-->
+    <div class="card">
+        <h5 class="card-header">frame1</h5>
+        <div class="card-body">
+            <iframe src="./frame.html" name="frame1" height="450px" width="100%"></iframe>
+        </div>
+    </div>
+    <div class="card">
+        <h5 class="card-header">frame2</h5>
+        <div class="card-body">
+            <iframe src="./frame_1.html" name="frame2" height="450px" width="100%"></iframe>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="js/jquery.min.js"> </script>
+    <script src="js/jquery.dad.min.js"> </script>
+    <script src="js/bootstrap.bundle.min.js"> </script>
+    <script src="js/main.min.js"></script>
+    <script src="js/date.min.js"></script>
+    <script type="text/javascript" src="../github_selenium_drivers/js/core.js"></script>
 </body>
 
 </html>

@@ -394,3 +394,21 @@
 .current-month {
   color: #333333;
 }
+
+div#drop-zone {
+  height: 100px;
+  width: 100px;
+  border: 2px dotted #ebebeb;
+}
+
+div#drop-zone:hover {
+  background-color: gray;
+  border: 1px dotted #000000;
+  cursor: move;
+}
+
+div#drop-content {
+  border: 1px solid #FFF;
+  margin-top: 15px;
+  padding: 10px;
+}
