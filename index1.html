@@ -404,7 +404,6 @@
         </div>
     </div>
 
-
     <!-- 日期选择器 -->
     <div class="card">
         <h5 class="card-header">日期选择器</h5>
@@ -432,7 +431,10 @@
     <div class="card">
         <h5 class="card-header">frame1</h5>
         <div class="card-body">
-            <iframe src="./frame.html" name="frame1" height="450px" width="100%"></iframe>
+            <div class="alert alert-success">使用 selenium 完成游戏</div>
+            <iframe src="./frame.html" id="frame1" name="frame1" height="450px" width="100%"></iframe>
+            <button id="re_frame1" type="button" class="btn btn-info"
+                onclick="document.getElementById('frame1').contentWindow.location.reload();">重置</button>
         </div>
     </div>
     <div class="card">
