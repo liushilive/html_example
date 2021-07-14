@@ -466,35 +466,37 @@ $(document).ready(function () {
     });
 
     // 拖拽上传图片
-    const dropZone = document.getElementById('drop-zone');
-    const content = document.getElementById('drop-content');
+    if ($("#drop-zone").length) {
+        const dropZone = document.getElementById('drop-zone');
+        const content = document.getElementById('drop-content');
 
-    const reader = new FileReader();
+        const reader = new FileReader();
 
-    if (window.FileList && window.File) {
-        dropZone.addEventListener('dragover', event => {
-            event.stopPropagation();
-            event.preventDefault();
-            event.dataTransfer.dropEffect = 'copy';
-        });
-
-        dropZone.addEventListener('drop', event => {
-            content.innerHTML = '';
-            event.stopPropagation();
-            event.preventDefault();
-            const files = event.dataTransfer.files;
-
-            reader.readAsDataURL(files[0]);
-
-            reader.addEventListener('load', (event) => {
-                content.innerHTML = '';
-                const img = document.createElement('img');
-                img.style.height = '200px';
-                content.appendChild(img);
-                img.src = event.target.result;
-                img.alt = files[0].name;
+        if (window.FileList && window.File) {
+            dropZone.addEventListener('dragover', event => {
+                event.stopPropagation();
+                event.preventDefault();
+                event.dataTransfer.dropEffect = 'copy';
             });
-        });
+
+            dropZone.addEventListener('drop', event => {
+                content.innerHTML = '';
+                event.stopPropagation();
+                event.preventDefault();
+                const files = event.dataTransfer.files;
+
+                reader.readAsDataURL(files[0]);
+
+                reader.addEventListener('load', (event) => {
+                    content.innerHTML = '';
+                    const img = document.createElement('img');
+                    img.style.height = '200px';
+                    content.appendChild(img);
+                    img.src = event.target.result;
+                    img.alt = files[0].name;
+                });
+            });
+        }
     }
 
     // 日期选择器
