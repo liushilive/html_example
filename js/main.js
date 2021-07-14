@@ -449,6 +449,22 @@ $(document).ready(function () {
         download(filename, content);
     });
 
+    // 文件夹上传
+    $("#directories-uploader").change(function (event) {
+        const files = event.target.files;
+        console.log('files', files);
+
+        while ($("#pathList").firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+
+        [...files].forEach((file, index) => {
+            let path = document.createElement('li');
+            path.innerHTML = file.webkitRelativePath;
+            pathList.appendChild(path);
+        });
+    });
+
     // 拖拽上传图片
     const dropZone = document.getElementById('drop-zone');
     const content = document.getElementById('drop-content');
